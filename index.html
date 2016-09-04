@@ -284,11 +284,22 @@
 	<script>
 		$(function() {
 
-			var bgList = [1,2,3,4,5,6];
-
 			function bgChange() {
-				$('body').css('background-image', '1.jpg')
+				var items = [5,14,15,20,17];
+				var i = items[Math.floor(Math.random()*items.length)];
+
+				var imageUrl = 'assets/images/' + i + '.jpg';
+				console.log(imageUrl); 
+
+				$('body').css('background-image', 'url('+ imageUrl + ')');
+				console.log(items[i]);
+
 			}
+
+			setInterval(function() {
+				bgChange();
+			}, 1800);
+
 
 
 	    $('#startDate').datepicker();
